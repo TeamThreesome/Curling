@@ -80,24 +80,24 @@ public class GameManager : MonoBehaviour {
 		currentStone = (GameObject)Object.Instantiate(stoneObject);
 		if(!player1Turn)
 		{
-			//currentStone.renderer.materials[1].SetColor("_Color",Color.green);
-			currentStone.GetComponent<ThrowCurling>().SetPlayer(1);
+			currentStone.renderer.materials[1].SetColor("_Color",Color.green);
+			currentStone.GetComponent<ThrowCurling>().SetPlayer(2);
 		}
 		else
 		{
-			//currentStone.renderer.materials[1].SetColor("_Color",Color.red);
-			currentStone.GetComponent<ThrowCurling>().SetPlayer(2);
+			currentStone.renderer.materials[1].SetColor("_Color",Color.red);
+			currentStone.GetComponent<ThrowCurling>().SetPlayer(1);
 		}
 	}
 	
 	void FinishTurn()
 	{
 		//Finish a trun
+		finishedStones.Add(currentStone);
 		CalculateScore();
 		throwing = false;
 		turnStart = false;
 		Camera.mainCamera.transform.position = originalCameraPos;
-		finishedStones.Add(currentStone);
 		Debug.Log(""+finishedStones.Count);
 		player1Turn = !player1Turn;
 	}
@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour {
 		foreach(GameObject obj in finishedStones)
 		{
 			float distance = Vector3.Distance(obj.transform.position,scoreCenter.transform.position);
-			int score;
+			int score = 0;
 			if(distance<scoreZone1)
 				score = score1;
 			else if(distance<scoreZone2)
