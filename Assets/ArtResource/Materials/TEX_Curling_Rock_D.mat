@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: TEX_Curling_D
+  m_Name: TEX_Curling_Rock_D
   m_Shader: {fileID: 7, guid: 0000000000000000e000000000000000, type: 0}
   m_ShaderKeywords: []
   m_SavedProperties:
@@ -16,7 +16,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 6927e50e651231441b4a4cd542c21a73, type: 3}
+          m_Texture: {fileID: 2800000, guid: 86eb2434f7637bb479a2e2a16600e1f8, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats: {}
@@ -24,4 +24,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 0, b: 0, a: 1}
+        second: {r: .588235319, g: .588235319, b: .588235319, a: 1}
