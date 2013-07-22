@@ -1,0 +1,393 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"star",
+				"StartTurn"
+			],
+			[
+				"turn",
+				"turnStart"
+			],
+			[
+				"sp",
+				"speedIncrement"
+			],
+			[
+				"leve",
+				"levelThreshold"
+			],
+			[
+				"rew",
+				"reward4"
+			],
+			[
+				"re",
+				"reward1"
+			],
+			[
+				"mo",
+				"MoveLeft"
+			],
+			[
+				"Mo",
+				"MoveRight"
+			],
+			[
+				"mov",
+				"MoveLeft"
+			],
+			[
+				"Uin",
+				"UnityEngine"
+			],
+			[
+				"Ver",
+				"Vector3	x, y, z"
+			],
+			[
+				"Unity",
+				"UnityEngine"
+			],
+			[
+				"unit",
+				"UnityEditor"
+			],
+			[
+				"Unit",
+				"UnityEditor"
+			],
+			[
+				"Game",
+				"GameObject"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 141,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".gitattributes",
+			"settings":
+			{
+				"buffer_size": 483,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"li",
+				"Package Control: List Packages"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"ke",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"pre",
+				"Preferences: Settings - User"
+			],
+			[
+				"p",
+				"Package Control: Install Package"
+			],
+			[
+				"pl",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 435.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Projects/Curling/Assets/Script/ThrowCurling.cs",
+		"/Projects/Curling/Assets/Script/GameManager.cs",
+		"/Projects/Curling/.gitignore",
+		"/Projects/Curling/.gitattributes",
+		"/Projects/Curling/Curling.sublime-project",
+		"/Users/Jimmy/Documents/gitignore.txt",
+		"/GoAgent/local/proxy.ini",
+		"/Users/Jimmy/Desktop/OverWall.sh",
+		"/Volumes/3/Education/samples/Cpp/HelloCpp/Classes/DrawScene.h",
+		"/Volumes/3/Education/samples/Cpp/HelloCpp/Classes/DrawScene.cpp",
+		"/Volumes/3/Education/cocos2dx/cocos2d.cpp",
+		"/Users/Jimmy/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/Jimmy/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Volumes/3/Education/samples/Cpp/HelloCpp/HelloCpp-Mac.sublime-project",
+		"/Volumes/3/Education/samples/Cpp/HelloCpp/Classes/DrawScene2.h",
+		"/Projects/Tetris/Assets/Script/GameManager.cs",
+		"/Projects/Tetris/Assets/Script/Block.cs",
+		"/Volumes/3/Education/samples/Cpp/HelloCpp/Classes/DrawScene2.cpp",
+		"/Users/Jimmy/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/Jimmy/Library/Application Support/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/Projects/Tetris/Tetris.sublime-project",
+		"/Users/Jimmy/Library/Application Support/Sublime Text 2/Packages/User/Default (Linux).sublime-keymap",
+		"/Users/Jimmy/Library/Application Support/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/Users/Jimmy/Library/Application Support/Sublime Text 2/Packages/CompleteSharp/CompleteSharp.sublime-settings",
+		"/Users/Jimmy/Library/Application Support/Sublime Text 2/Packages/CompleteSharp/README.creole",
+		"/Projects/Tetris/Library/ScriptAssemblies/CompilationCompleted.txt"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"meta",
+			"if",
+			"throwing",
+			"Camera.mainCamera.transform.position",
+			"turnStart",
+			"throwing",
+			"clearImage",
+			"void",
+			"static",
+			"Xmax",
+			"static",
+			"speed",
+			"ImproveInput",
+			"CheckInput",
+			"Rotate",
+			"movingLeft",
+			"init",
+			"MoveLeft",
+			"level",
+			"movingLeft",
+			"		",
+			"tetris",
+			"\n		",
+			"tetris",
+			"\n	",
+			"block"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": ".gitignore",
+					"settings":
+					{
+						"buffer_size": 141,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								141,
+								141
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": ".gitattributes",
+					"settings":
+					{
+						"buffer_size": 483,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								361,
+								361
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"gi",
+				".gitignore"
+			],
+			[
+				"thr",
+				"Assets/Script/ThrowCurling.cs"
+			],
+			[
+				"",
+				"Assets/Script/GameManager.cs"
+			],
+			[
+				"coco",
+				"cocos2dx/cocos2d.cpp"
+			],
+			[
+				"dra",
+				"HelloCpp/Classes/DrawScene.h"
+			],
+			[
+				"draw",
+				"HelloCpp/Classes/DrawScene.cpp"
+			],
+			[
+				"sub",
+				"Tetris.sublime-project"
+			],
+			[
+				"bl",
+				"Assets/Script/Block.cs"
+			],
+			[
+				"gam",
+				"Assets/Script/GameManager.cs"
+			],
+			[
+				"te",
+				"Tetris.sublime-project"
+			],
+			[
+				"blo",
+				"Assets/Script/Block.cs"
+			],
+			[
+				"game",
+				"Assets/Script/GameManager.cs"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 195.0,
+	"status_bar_visible": true
+}

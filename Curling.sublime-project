@@ -1,0 +1,26 @@
+{
+	"folders":
+	[
+		{
+			"file_include_patterns":
+			[
+				"*.cs",
+				"*.shader",
+				"*.sublime-project",
+				"*.gitignore",
+				"*.gitattributes"
+			],
+			"path": "/Projects/Curling"
+		}
+	],
+	"settings":
+	{
+		"completesharp_assemblies":
+		[
+			"/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll",
+			"/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll",
+			"/Projects/Curling/Library/ScriptAssemblies/Assembly-CSharp.dll",
+			"/Projects/Curling/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll"
+		]
+	}
+}

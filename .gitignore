@@ -7,7 +7,5 @@ Library/
 Temp/
 *.pidb
 Build/
-*.sublime-project
-*.sublime-workspace
 *.mdb
 *.dll
