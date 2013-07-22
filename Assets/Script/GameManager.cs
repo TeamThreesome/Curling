@@ -132,6 +132,8 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		if(!throwing)
 		{
+			if(!turnStart)
+				return;
 			if (Input.GetKey("left"))
 			{
 				Vector3 pos = currentStone.transform.position;
