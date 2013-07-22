@@ -135,7 +135,11 @@ public class GameManager : MonoBehaviour {
 		if(!throwing)
 		{
 			if(!turnStart)
+			{
+				if (Input.GetKeyDown("space"))
+					StartTurn();
 				return;
+			}
 			if (Input.GetKey("left"))
 			{
 				Vector3 pos = currentStone.transform.position;
@@ -154,15 +158,15 @@ public class GameManager : MonoBehaviour {
 		}
 		else
 		{
-			if(currentStone.rigidbody.velocity.magnitude<0.1 && currentStone.transform.position != startPoint )
-				FinishTurn();
-			else
+			if(currentStone.rigidbody.velocity.magnitude>0.1) 
 			{
 				tempCameraPos.x = currentStone.transform.position.x-8;
 				tempCameraPos.y = currentStone.transform.position.y+7;
 				//tempCameraPos.z = Camera.mainCamera.transform.position.z;
 				Camera.mainCamera.transform.position = tempCameraPos;
 			}
+			else if(Vector3.Distance(currentStone.transform.position,startPoint)>3 )
+				FinishTurn();
 		}
 	}
 }
