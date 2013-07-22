@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour {
 	Vector3 originalCameraPos;
 	//Quaternion originalCameraRot;
 	Vector3 tempCameraPos;
+	Vector3 startPoint;
 	
 	GameObject currentStone;	//The moving one
 	GameObject stoneObject;
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour {
 		//originalCameraRot = Camera.mainCamera.transform.rotation;
 		//load resource
 		stoneObject = (GameObject)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/Prefab/Pref_Stone.prefab",typeof(GameObject));
+		startPoint = stoneObject.transform.position;
 		finishedStones = new List<GameObject>();
 	}
 	
@@ -152,7 +154,7 @@ public class GameManager : MonoBehaviour {
 		}
 		else
 		{
-			if(currentStone.rigidbody.velocity.magnitude<0.1)
+			if(currentStone.rigidbody.velocity.magnitude<0.1 && currentStone.transform.position != startPoint )
 				FinishTurn();
 			else
 			{
