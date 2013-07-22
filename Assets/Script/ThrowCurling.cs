@@ -4,6 +4,8 @@ using System.Collections;
 public class ThrowCurling : MonoBehaviour {
 	
 	public float mForce = 250;
+	public float mRange = 50;
+	int playerID;
 
 	// Use this for initialization
 	void Start () {
@@ -12,9 +14,18 @@ public class ThrowCurling : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown("space"))
-		{
-			this.rigidbody.AddForce(mForce,0,0,ForceMode.Acceleration);
-		}
+	}
+	
+	public void SetPlayer(int id){
+		playerID = id;
+	}
+	
+	public int GetPlayer(){
+		return playerID;
+	}
+	
+	public void Throw () {
+		mForce = Random.Range(mForce-mRange,mForce+mRange);
+		this.rigidbody.AddForce(mForce,0,0,ForceMode.Acceleration);
 	}
 }
