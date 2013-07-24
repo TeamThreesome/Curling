@@ -364,6 +364,7 @@ GameObject:
   - 33: {fileID: 2030901713}
   - 23: {fileID: 2030901712}
   - 95: {fileID: 2030901711}
+  - 64: {fileID: 2030901715}
   m_Layer: 0
   m_Name: PRO_Board
   m_TagString: Untagged
@@ -423,3 +424,16 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!64 &2030901715
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2030901710}
+  m_Material: {fileID: 13400000, guid: cc4a5749811cb4b49a8ec47f6071566e, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: dabefd4cb2c980c4ebae77f3b78a20bf, type: 3}

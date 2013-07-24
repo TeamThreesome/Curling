@@ -67,22 +67,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": ".gitignore",
-			"settings":
-			{
-				"buffer_size": 141,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": ".gitattributes",
-			"settings":
-			{
-				"buffer_size": 483,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -140,11 +124,11 @@
 	},
 	"file_history":
 	[
-		"/Projects/Curling/Assets/Script/ThrowCurling.cs",
-		"/Projects/Curling/Assets/Script/GameManager.cs",
+		"/Projects/Curling/Curling.sublime-project",
 		"/Projects/Curling/.gitignore",
 		"/Projects/Curling/.gitattributes",
-		"/Projects/Curling/Curling.sublime-project",
+		"/Projects/Curling/Assets/Script/ThrowCurling.cs",
+		"/Projects/Curling/Assets/Script/GameManager.cs",
 		"/Users/Jimmy/Documents/gitignore.txt",
 		"/GoAgent/local/proxy.ini",
 		"/Users/Jimmy/Desktop/OverWall.sh",
@@ -226,61 +210,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": ".gitignore",
-					"settings":
-					{
-						"buffer_size": 141,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								141,
-								141
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": ".gitattributes",
-					"settings":
-					{
-						"buffer_size": 483,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								361,
-								361
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],

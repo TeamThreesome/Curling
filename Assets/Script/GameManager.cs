@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour {
 		throwing = false;
 		turnStart = false;
 		Camera.mainCamera.transform.position = originalCameraPos;
-		Debug.Log(""+finishedStones.Count);
+		//Debug.Log(""+finishedStones.Count);
 		player1Turn = !player1Turn;
 	}
 	

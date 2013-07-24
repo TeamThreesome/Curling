@@ -26,6 +26,14 @@ public class ThrowCurling : MonoBehaviour {
 	
 	public void Throw () {
 		mForce = Random.Range(mForce-mRange,mForce+mRange);
-		this.rigidbody.AddForce(mForce,0,0,ForceMode.Force);
+		this.rigidbody.AddForce(mForce,0,0,ForceMode.VelocityChange);
+	}
+
+	void OnCollisionEnter(Collision collision) {
+		if(collision.rigidbody != null)
+		{
+			collision.rigidbody.useGravity = true;
+			this.rigidbody.useGravity = true;
+		}
 	}
 }

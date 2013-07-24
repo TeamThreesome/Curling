@@ -65,9 +65,9 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 19.9599991
   m_Drag: .300000012
-  m_AngularDrag: .0500000007
+  m_AngularDrag: .100000001
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -79,11 +79,11 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: cc4a5749811cb4b49a8ec47f6071566e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
+  m_SmoothSphereCollisions: 1
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 66a15a53b1b0b6840b559ce4bb3d6b4f, type: 3}
 --- !u!95 &9500000
@@ -108,8 +108,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc83197caa30922408727fd578b81b90, type: 3}
   m_Name: 
-  mForce: 500
-  mRange: 50
+  mForce: 10
+  mRange: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
