@@ -67,6 +67,30 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "Assets/Script/GameManager.cs",
+			"settings":
+			{
+				"buffer_size": 4278,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Script/ThrowCurling.cs",
+			"settings":
+			{
+				"buffer_size": 699,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Projects/VoiceRecordDemo/Classes/HelloWorldScene.h",
+			"settings":
+			{
+				"buffer_size": 715,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -210,8 +234,89 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Assets/Script/GameManager.cs",
+					"settings":
+					{
+						"buffer_size": 4278,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2552,
+								2552
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1455.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Assets/Script/ThrowCurling.cs",
+					"settings":
+					{
+						"buffer_size": 699,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								479,
+								479
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Projects/VoiceRecordDemo/Classes/HelloWorldScene.h",
+					"settings":
+					{
+						"buffer_size": 715,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								601,
+								601
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -257,16 +362,16 @@
 		"selected_items":
 		[
 			[
+				"",
+				"Assets/Script/ThrowCurling.cs"
+			],
+			[
 				"gi",
 				".gitignore"
 			],
 			[
 				"thr",
 				"Assets/Script/ThrowCurling.cs"
-			],
-			[
-				"",
-				"Assets/Script/GameManager.cs"
 			],
 			[
 				"coco",

@@ -7,12 +7,18 @@ public class GameManager : MonoBehaviour {
 	
 	//----------------------------------
 	//Scores of 2 players
-	int playerScore1;
-	int playerScore2;
-	
-	bool player1Turn;	//Which player is playing
-	bool throwing;
-	bool turnStart;
+	int playerScore1 = 0;
+	int playerScore2 = 0;
+
+	public int roundsOfGame = 10;
+	public int curlingOfRound = 8;
+	int rounded = 1;
+	int curled = 1;
+
+	bool player1Turn = false;	//Which player is first throwing in this turn
+	bool player1Throw = false;	//Which player is throwing
+	bool throwing = false;		//If the stone is flying
+	bool turnStart = false;		//If the player is ready to throwing
 	
 	Vector3 originalCameraPos;
 	//Quaternion originalCameraRot;
@@ -39,10 +45,6 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		playerScore1 = 0;
-		playerScore2 = 0;
-		player1Turn = true;
-		throwing = false;
 		originalCameraPos = Camera.mainCamera.transform.position;
 		tempCameraPos = originalCameraPos;
 		//originalCameraRot = Camera.mainCamera.transform.rotation;
@@ -56,18 +58,22 @@ public class GameManager : MonoBehaviour {
         GUI.enabled = true;
 		
     	GUILayout.BeginArea(new Rect(10, 10, 150,150));
-    	string text = "Player 1 : " + playerScore1;
+    	string text = "Round : " + rounded;
+    	GUILayout.Box(text);
+    	text = "Turn : " + curled;
+    	GUILayout.Box(text);
+    	text = "Player 1 : " + playerScore1;
     	GUILayout.Box(text);
 		text = "Player 2 : " + playerScore2;
 		GUILayout.Box(text);
 		if(turnStart==false)
 		{
 			if(GUILayout.Button("Start to throw"))
-				StartTurn();
+				StartThrow();
 		}
 		else
 		{
-			if(player1Turn)
+			if(player1Throw)
 				text = "Player 1's turn";
 			else
 				text = "Player 2's turn";
@@ -75,14 +81,41 @@ public class GameManager : MonoBehaviour {
 		}
     	GUILayout.EndArea();		
     }
-	
-	void StartTurn()
+
+    void FinishRound()
+    {
+    	CalculateScore();
+    	//Clear all the stone in this round
+    	foreach(GameObject stone in finishedStones)
+    	{
+	    	Object.Destroy(stone);
+    	}
+		finishedStones.Clear();
+	    //Check if game is finished
+    	if(rounded==roundsOfGame)
+    		Debug.Log("Game is finished");
+
+    	//Change the throwing order
+    	player1Turn = !player1Turn;
+    	player1Throw = player1Turn;
+    	rounded++;	//next round
+    	curled=1;
+    }
+
+	void FinishTurn()
+	{
+		if(curled==curlingOfRound)
+			FinishRound();
+		curled++;
+	}
+
+	void StartThrow()
 	{
 		turnStart = true;
 		currentStone = (GameObject)Object.Instantiate(stoneObject);
-		if(!player1Turn)
+		if(!player1Throw)
 		{
-			currentStone.renderer.materials[1].SetColor("_Color",Color.green);
+			currentStone.renderer.materials[1].SetColor("_Color",Color.yellow);
 			currentStone.GetComponent<ThrowCurling>().SetPlayer(2);
 		}
 		else
@@ -92,41 +125,58 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 	
-	void FinishTurn()
+	void FinishThrow()
 	{
 		//Finish a trun
-		finishedStones.Add(currentStone);
-		CalculateScore();
+		if(currentStone!=null)
+			finishedStones.Add(currentStone);
+		//CalculateScore();
 		throwing = false;
 		turnStart = false;
 		Camera.mainCamera.transform.position = originalCameraPos;
 		//Debug.Log(""+finishedStones.Count);
-		player1Turn = !player1Turn;
+		player1Throw = !player1Throw;
+		//if back to player1 then that means new turn
+		if(player1Throw==player1Turn)
+			FinishTurn();
 	}
 	
 	void CalculateScore()
 	{
-		playerScore1 = 0;
-		playerScore2 = 0;
+		int whoScored;
+		float minPlayer1 = 100.0f;
+		float minPlayer2 = 100.0f;
 		foreach(GameObject obj in finishedStones)
 		{
 			float distance = Vector3.Distance(obj.transform.position,scoreCenter.transform.position);
-			int score = 0;
-			if(distance<scoreZone1)
-				score = score1;
-			else if(distance<scoreZone2)
-				score = score2;
-			else if(distance<scoreZone3)
-				score = score3;
-			else if(distance<scoreZone4)
-				score = score4;
-			else
-				score = 0;
-			
+
 			if(obj.GetComponent<ThrowCurling>().GetPlayer() == 1)
-				playerScore1 += score;
+				if(distance<minPlayer1)
+					minPlayer1 = distance;
 			else
-				playerScore2 += score;
+				if(distance<minPlayer2)
+					minPlayer2 = distance;
+		}
+
+		if(minPlayer1<minPlayer2)
+			whoScored = 1;
+		else if(minPlayer2<minPlayer1)
+			whoScored = 2;
+		else
+			return;	//Draw
+
+		foreach(GameObject obj in finishedStones)
+		{
+			float distance = Vector3.Distance(obj.transform.position,scoreCenter.transform.position);
+			if(obj.GetComponent<ThrowCurling>().GetPlayer() == whoScored)
+			{
+				if(whoScored == 1)
+					if(distance<minPlayer2 && distance<scoreZone4)
+						playerScore1++;
+				if(whoScored == 2)
+					if(distance<minPlayer1 && distance<scoreZone4)
+						playerScore2++;
+			}
 		}
 	}
 	
@@ -137,18 +187,20 @@ public class GameManager : MonoBehaviour {
 			if(!turnStart)
 			{
 				if (Input.GetKeyDown("space"))
-					StartTurn();
+					StartThrow();
 				return;
 			}
 			if (Input.GetKey("left"))
 			{
 				Vector3 pos = currentStone.transform.position;
-				currentStone.transform.position = new Vector3(pos.x,pos.y,pos.z+Time.deltaTime*2.0f);
+				if(currentStone.transform.position.z<3.5)
+					currentStone.transform.position = new Vector3(pos.x,pos.y,pos.z+Time.deltaTime*2.0f);
 			}
 			if (Input.GetKey("right"))
 			{
 				Vector3 pos = currentStone.transform.position;
-				currentStone.transform.position = new Vector3(pos.x,pos.y,pos.z-Time.deltaTime*2.0f);
+				if(currentStone.transform.position.z>-3.5)
+					currentStone.transform.position = new Vector3(pos.x,pos.y,pos.z-Time.deltaTime*2.0f);
 			}
 			if (Input.GetKeyDown("space"))
 			{
@@ -166,7 +218,21 @@ public class GameManager : MonoBehaviour {
 				Camera.mainCamera.transform.position = tempCameraPos;
 			}
 			else if(Vector3.Distance(currentStone.transform.position,startPoint)>3 )
-				FinishTurn();
+				FinishThrow();
+
+			if(currentStone.transform.position.z>4.13 || currentStone.transform.position.z<-4.13 || currentStone.transform.position.x>43)
+			{
+				Object.Destroy(currentStone);
+				FinishThrow();
+			}
+			foreach(GameObject obj in finishedStones)
+			{
+				if(obj.transform.position.z>4.13 || obj.transform.position.z<-4.13 || obj.transform.position.x>43)
+				{
+					finishedStones.Remove(obj);
+					Object.Destroy(obj);
+				}
+			}
 		}
 	}
 }
