@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour {
 	bool throwing = false;		//If the stone is flying
 	bool turnStart = false;		//If the player is ready to throwing
 	bool readyToReleaseCurl = false;	//true when left button hold down
+
+	bool gameFinished = false;
+	int gameResult = -1;
 	
 	Vector3 originalCameraPos;
 	//Quaternion originalCameraRot;
@@ -46,6 +49,9 @@ public class GameManager : MonoBehaviour {
 	public float scoreZone4 = 3.66f;
 	public int score4 = 10;
 
+	int width = Screen.width;
+	int height = Screen.height;
+
 	// Use this for initialization
 	void Start () {
 		originalCameraPos = Camera.mainCamera.transform.position;
@@ -59,9 +65,34 @@ public class GameManager : MonoBehaviour {
 	
 	void OnGUI() {
         GUI.enabled = true;
+
+    	string text;
+        if(gameFinished)
+        {
+        	GUILayout.BeginArea(new Rect(width/2 - 75, height/2-25, 150, 50));
+        	switch(gameResult)
+        	{
+        	case 0:
+        		text = "Game Draw";
+        		break;
+        	case 1:
+        		text = "Player 1 Wins";
+        		break;
+        	case 2:
+        		text = "Player 2 Wins";
+        		break;
+    		default:
+    			text = "Bug happens";
+    			break;
+        	}
+        	GUILayout.Box(text);
+        	if(GUILayout.Button("Start a New Game"))
+        		newGame();
+        	GUILayout.EndArea();
+        	return;
+        }
 		
     	GUILayout.BeginArea(new Rect(10, 10, 200, 150));
-    	string text;
     	if(player1Turn)
     		text = "Round : " + rounded + " of " + roundsOfGame + " - Player1";
     	else
@@ -106,7 +137,7 @@ public class GameManager : MonoBehaviour {
 		finishedStones.Clear();
 	    //Check if game is finished
     	if(rounded==roundsOfGame)
-    		Debug.Log("Game is finished");
+    		FinishGame();
 
     	//Change the throwing order
     	player1Turn = !player1Turn;
@@ -158,6 +189,33 @@ public class GameManager : MonoBehaviour {
 		else
 			secondThrow = true;
 	}
+
+	void FinishGame()
+	{
+		gameFinished = true;
+		if(playerScore1>playerScore2)
+			gameResult = 1;
+		else if(playerScore2>playerScore1)
+			gameResult = 2;
+		else
+			gameResult = 0;	//0 means draw
+	}
+
+	void newGame()
+	{
+		gameFinished = false;
+		rounded = 1;
+		curled = 1;
+		player1Turn = true;	//Which player is first throwing in this turn
+		player1Throw = true;	//Which player is throwing
+		secondThrow = false;
+		throwing = false;		//If the stone is flying
+		turnStart = false;		//If the player is ready to throwing
+		readyToReleaseCurl = false;	//true when left button hold down
+		gameResult = -1;
+		playerScore1 = 0;
+		playerScore2 = 0;
+	}
 	
 	void CalculateScore()
 	{
@@ -204,6 +262,8 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(gameFinished)
+			return;
 		if(!throwing)
 		{
 			if(!turnStart)
