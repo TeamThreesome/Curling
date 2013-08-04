@@ -11,12 +11,13 @@ public class GameManager : MonoBehaviour {
 	int playerScore2 = 0;
 
 	public int roundsOfGame = 10;
-	public int curlingOfRound = 8;
+	public int curlsOfRound = 8;
 	int rounded = 1;
 	int curled = 1;
 
-	bool player1Turn = false;	//Which player is first throwing in this turn
-	bool player1Throw = false;	//Which player is throwing
+	bool player1Turn = true;	//Which player is first throwing in this turn
+	bool player1Throw = true;	//Which player is throwing
+	bool secondThrow = false;
 	bool throwing = false;		//If the stone is flying
 	bool turnStart = false;		//If the player is ready to throwing
 	bool readyToReleaseCurl = false;	//true when left button hold down
@@ -59,15 +60,25 @@ public class GameManager : MonoBehaviour {
 	void OnGUI() {
         GUI.enabled = true;
 		
-    	GUILayout.BeginArea(new Rect(10, 10, 150,150));
-    	string text = "Round : " + rounded;
+    	GUILayout.BeginArea(new Rect(10, 10, 200, 150));
+    	string text;
+    	if(player1Turn)
+    		text = "Round : " + rounded + " of " + roundsOfGame + " - Player1";
+    	else
+    		text = "Round : " + rounded + " of " + roundsOfGame + " - Player2";
     	GUILayout.Box(text);
-    	text = "Turn : " + curled;
+
+    	if(!secondThrow)
+    		text = "Turn : " + curled + " of "+ curlsOfRound + " - 1st pitch";
+    	else
+    		text = "Turn : " + curled + " of "+ curlsOfRound + " - 2nd pitch";
     	GUILayout.Box(text);
+
     	text = "Player 1 : " + playerScore1;
     	GUILayout.Box(text);
 		text = "Player 2 : " + playerScore2;
 		GUILayout.Box(text);
+
 		if(turnStart==false)
 		{
 			if(GUILayout.Button("Start to throw"))
@@ -106,7 +117,7 @@ public class GameManager : MonoBehaviour {
 
 	void FinishTurn()
 	{
-		if(curled==curlingOfRound)
+		if(curled==curlsOfRound)
 			FinishRound();
 		curled++;
 	}
@@ -140,7 +151,12 @@ public class GameManager : MonoBehaviour {
 		player1Throw = !player1Throw;
 		//if back to player1 then that means new turn
 		if(player1Throw==player1Turn)
+		{
 			FinishTurn();
+			secondThrow = false;
+		}
+		else
+			secondThrow = true;
 	}
 	
 	void CalculateScore()
@@ -153,11 +169,15 @@ public class GameManager : MonoBehaviour {
 			float distance = Vector3.Distance(obj.transform.position,scoreCenter.transform.position);
 
 			if(obj.GetComponent<ThrowCurling>().GetPlayer() == 1)
+			{
 				if(distance<minPlayer1)
 					minPlayer1 = distance;
+			}
 			else
+			{
 				if(distance<minPlayer2)
 					minPlayer2 = distance;
+			}
 		}
 
 		if(minPlayer1<minPlayer2)
@@ -188,7 +208,7 @@ public class GameManager : MonoBehaviour {
 		{
 			if(!turnStart)
 			{
-				if (Input.GetKeyDown("space"))
+				if (Input.GetKeyDown("space") || Input.GetMouseButtonDown(0) )
 					StartThrow();
 				return;
 			}
@@ -213,23 +233,23 @@ public class GameManager : MonoBehaviour {
 				}
 				return;
 			}
-			if (Input.GetKey("left"))
+			if (Input.GetKey("left") || Input.GetKey(KeyCode.A))
 			{
 				Vector3 pos = currentStone.transform.position;
 				if(currentStone.transform.position.z<3.5)
 					currentStone.transform.position = new Vector3(pos.x,pos.y,pos.z+Time.deltaTime*2.0f);
 			}
-			if (Input.GetKey("right"))
+			if (Input.GetKey("right") || Input.GetKey(KeyCode.D))
 			{
 				Vector3 pos = currentStone.transform.position;
 				if(currentStone.transform.position.z>-3.5)
 					currentStone.transform.position = new Vector3(pos.x,pos.y,pos.z-Time.deltaTime*2.0f);
 			}
-			if (Input.GetKeyDown("space"))
+			/*if (Input.GetKeyDown("space"))
 			{
 				currentStone.GetComponent<ThrowCurling>().Throw();
 				throwing = true;
-			}
+			}*/
 		}
 		else // Curling is moving!
 		{
@@ -249,6 +269,7 @@ public class GameManager : MonoBehaviour {
 				{
 					finishedStones.Remove(obj);
 					Object.Destroy(obj);
+					break;
 				}
 			}
 			if(currentStone.transform.position.z>4.13 || currentStone.transform.position.z<-4.13 || currentStone.transform.position.x>43)
