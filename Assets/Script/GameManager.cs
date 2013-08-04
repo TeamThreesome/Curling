@@ -19,11 +19,13 @@ public class GameManager : MonoBehaviour {
 	bool player1Throw = false;	//Which player is throwing
 	bool throwing = false;		//If the stone is flying
 	bool turnStart = false;		//If the player is ready to throwing
+	bool readyToReleaseCurl = false;	//true when left button hold down
 	
 	Vector3 originalCameraPos;
 	//Quaternion originalCameraRot;
 	Vector3 tempCameraPos;
 	Vector3 startPoint;
+	Vector3 mousePoint;
 	
 	GameObject currentStone;	//The moving one
 	GameObject stoneObject;
@@ -190,6 +192,27 @@ public class GameManager : MonoBehaviour {
 					StartThrow();
 				return;
 			}
+			if(Input.GetMouseButtonDown(0))
+			{
+				mousePoint = Input.mousePosition;
+				readyToReleaseCurl = true;
+				return;
+			}
+			if(readyToReleaseCurl)
+			{
+				if(Input.GetMouseButtonUp(0))
+				{
+					float forceDistance = Vector3.Distance(Input.mousePosition, mousePoint);
+					float range = forceDistance/1000.0f;
+					range = range*15 + 5.0f;
+					currentStone.GetComponent<ThrowCurling>().mForce = range;
+					currentStone.GetComponent<ThrowCurling>().mRange = 0;
+					currentStone.GetComponent<ThrowCurling>().Throw();
+					readyToReleaseCurl = false;
+					throwing = true;
+				}
+				return;
+			}
 			if (Input.GetKey("left"))
 			{
 				Vector3 pos = currentStone.transform.position;
@@ -208,7 +231,7 @@ public class GameManager : MonoBehaviour {
 				throwing = true;
 			}
 		}
-		else
+		else // Curling is moving!
 		{
 			if(currentStone.rigidbody.velocity.magnitude>0.1) 
 			{
@@ -220,11 +243,6 @@ public class GameManager : MonoBehaviour {
 			else if(Vector3.Distance(currentStone.transform.position,startPoint)>3 )
 				FinishThrow();
 
-			if(currentStone.transform.position.z>4.13 || currentStone.transform.position.z<-4.13 || currentStone.transform.position.x>43)
-			{
-				Object.Destroy(currentStone);
-				FinishThrow();
-			}
 			foreach(GameObject obj in finishedStones)
 			{
 				if(obj.transform.position.z>4.13 || obj.transform.position.z<-4.13 || obj.transform.position.x>43)
@@ -232,6 +250,12 @@ public class GameManager : MonoBehaviour {
 					finishedStones.Remove(obj);
 					Object.Destroy(obj);
 				}
+			}
+			if(currentStone.transform.position.z>4.13 || currentStone.transform.position.z<-4.13 || currentStone.transform.position.x>43)
+			{
+				Object.Destroy(currentStone);
+				currentStone = null;
+				FinishThrow();
 			}
 		}
 	}

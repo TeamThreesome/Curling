@@ -4,8 +4,64 @@
 		"selected_items":
 		[
 			[
+				"sco",
+				"scoreZone4"
+			],
+			[
+				"re",
+				"RemoveAll(Predicate<GameObject>)	Int32"
+			],
+			[
+				"fni",
+				"finishedStones"
+			],
+			[
+				"fini",
+				"finishedStones"
+			],
+			[
+				"for",
+				"foreach"
+			],
+			[
+				"Fini",
+				"FinishThrow"
+			],
+			[
+				"cur",
+				"currentStone"
+			],
+			[
+				"cu",
+				"curled"
+			],
+			[
+				"Bo",
+				"Box"
+			],
+			[
+				"rou",
+				"rounded"
+			],
+			[
+				"play",
+				"playerScore2"
+			],
+			[
+				"min",
+				"minPlayer1"
+			],
+			[
 				"star",
-				"StartTurn"
+				"StartThrow"
+			],
+			[
+				"player1t",
+				"player1Turn"
+			],
+			[
+				"Start",
+				"StartThrow"
 			],
 			[
 				"turn",
@@ -22,10 +78,6 @@
 			[
 				"rew",
 				"reward4"
-			],
-			[
-				"re",
-				"reward1"
 			],
 			[
 				"mo",
@@ -71,8 +123,17 @@
 			"file": "Assets/Script/GameManager.cs",
 			"settings":
 			{
-				"buffer_size": 4278,
+				"buffer_size": 6166,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC \n/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: can't locate file for: -lwebp\n/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: file: -lwebp is not an object file (not allowed in a library)\nCommand /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool failed with exit code 1",
+			"settings":
+			{
+				"buffer_size": 569,
+				"line_ending": "Unix",
+				"name": "/Applications/Xcode.app/Contents/Developer/Toolcha"
 			}
 		},
 		{
@@ -80,14 +141,6 @@
 			"settings":
 			{
 				"buffer_size": 699,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Projects/VoiceRecordDemo/Classes/HelloWorldScene.h",
-			"settings":
-			{
-				"buffer_size": 715,
 				"line_ending": "Unix"
 			}
 		}
@@ -148,6 +201,7 @@
 	},
 	"file_history":
 	[
+		"/Projects/VoiceRecordDemo/Classes/HelloWorldScene.h",
 		"/Projects/Curling/Curling.sublime-project",
 		"/Projects/Curling/.gitignore",
 		"/Projects/Curling/.gitattributes",
@@ -191,6 +245,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"scoreZone4",
+			"Destroy",
+			"currentStone",
+			"FinishThrow",
+			"rounded",
+			"curled",
+			"score",
+			"turnStart",
+			"FinishTurn",
+			"player1Turn",
+			"StartTurn",
+			"CalculateScore",
 			"meta",
 			"if",
 			"throwing",
@@ -234,7 +300,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -242,15 +308,15 @@
 					"file": "Assets/Script/GameManager.cs",
 					"settings":
 					{
-						"buffer_size": 4278,
+						"buffer_size": 6166,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2552,
-								2552
+								5329,
+								5329
 							]
 						],
 						"settings":
@@ -259,13 +325,39 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1455.0,
+						"translation.y": 3557.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"settings":
+					{
+						"buffer_size": 569,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								505,
+								545
+							]
+						],
+						"settings":
+						{
+							"auto_name": "/Applications/Xcode.app/Contents/Developer/Toolcha",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "Assets/Script/ThrowCurling.cs",
 					"settings":
 					{
@@ -276,40 +368,14 @@
 						"selection":
 						[
 							[
-								479,
-								479
+								477,
+								477
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
 							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Projects/VoiceRecordDemo/Classes/HelloWorldScene.h",
-					"settings":
-					{
-						"buffer_size": 715,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								601,
-								601
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
