@@ -495,6 +495,7 @@ GameObject:
   - 33: {fileID: 2078859385}
   - 23: {fileID: 2078859384}
   - 95: {fileID: 2078859383}
+  - 64: {fileID: 2078859386}
   m_Layer: 0
   m_Name: PRO_outline_Billboard
   m_TagString: Untagged
@@ -553,4 +554,17 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 1457168106}
   m_GameObject: {fileID: 2078859381}
+  m_Mesh: {fileID: 4300000, guid: 880785a36cdcfcd40a9722c9186c15c2, type: 3}
+--- !u!64 &2078859386
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2078859381}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 880785a36cdcfcd40a9722c9186c15c2, type: 3}
