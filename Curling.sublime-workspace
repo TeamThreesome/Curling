@@ -4,6 +4,74 @@
 		"selected_items":
 		[
 			[
+				"Fini",
+				"FinishGame"
+			],
+			[
+				"new",
+				"newGame"
+			],
+			[
+				"GUI",
+				"GUILayout"
+			],
+			[
+				"play",
+				"playerScore1"
+			],
+			[
+				"game",
+				"gameResult"
+			],
+			[
+				"playe",
+				"playerScore2"
+			],
+			[
+				"Gui",
+				"GUILayout"
+			],
+			[
+				"getmou",
+				"GetMouseButtonDown(Int32)	Boolean"
+			],
+			[
+				"cur",
+				"curlingOfRound"
+			],
+			[
+				"rou",
+				"roundsOfGame"
+			],
+			[
+				"get",
+				"GetKey(KeyCode)	Boolean"
+			],
+			[
+				"Vec",
+				"Vector3	x, y, z"
+			],
+			[
+				"getbu",
+				"GetButtonUp(String)	Boolean"
+			],
+			[
+				"for",
+				"forceDistance"
+			],
+			[
+				"mous",
+				"mousePoint"
+			],
+			[
+				"read",
+				"readyToReleaseCurl"
+			],
+			[
+				"mou",
+				"mousePoint"
+			],
+			[
 				"sco",
 				"scoreZone4"
 			],
@@ -20,32 +88,12 @@
 				"finishedStones"
 			],
 			[
-				"for",
-				"foreach"
-			],
-			[
-				"Fini",
-				"FinishThrow"
-			],
-			[
-				"cur",
-				"currentStone"
-			],
-			[
 				"cu",
 				"curled"
 			],
 			[
 				"Bo",
 				"Box"
-			],
-			[
-				"rou",
-				"rounded"
-			],
-			[
-				"play",
-				"playerScore2"
 			],
 			[
 				"min",
@@ -123,17 +171,8 @@
 			"file": "Assets/Script/GameManager.cs",
 			"settings":
 			{
-				"buffer_size": 6166,
+				"buffer_size": 8757,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC \n/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: can't locate file for: -lwebp\n/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool: file: -lwebp is not an object file (not allowed in a library)\nCommand /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool failed with exit code 1",
-			"settings":
-			{
-				"buffer_size": 569,
-				"line_ending": "Unix",
-				"name": "/Applications/Xcode.app/Contents/Developer/Toolcha"
 			}
 		},
 		{
@@ -245,6 +284,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"player1Win",
+			"getplayer",
+			"setPlayer",
+			"minPlayer1",
+			"player1Turn",
+			"curlsOfRound",
+			"curlingOfRound",
+			"FinishTurn",
+			"curled",
+			"player1Turn",
+			"FinishThrow",
+			"Object.Destroy",
+			"finishedStones",
+			"startPoint",
+			"StartThrow",
 			"scoreZone4",
 			"Destroy",
 			"currentStone",
@@ -300,7 +354,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -308,15 +362,15 @@
 					"file": "Assets/Script/GameManager.cs",
 					"settings":
 					{
-						"buffer_size": 6166,
+						"buffer_size": 8757,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5329,
-								5329
+								1928,
+								1928
 							]
 						],
 						"settings":
@@ -325,39 +379,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3557.0,
+						"translation.y": 924.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"settings":
-					{
-						"buffer_size": 569,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								505,
-								545
-							]
-						],
-						"settings":
-						{
-							"auto_name": "/Applications/Xcode.app/Contents/Developer/Toolcha",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "Assets/Script/ThrowCurling.cs",
 					"settings":
 					{
@@ -368,8 +396,8 @@
 						"selection":
 						[
 							[
-								477,
-								477
+								103,
+								103
 							]
 						],
 						"settings":
@@ -480,11 +508,15 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"",
+				"/Projects/Tetris/Tetris.sublime-project"
+			]
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"show_minimap": true,
 	"show_open_files": true,

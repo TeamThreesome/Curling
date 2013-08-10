@@ -20,7 +20,10 @@ public class GameManager : MonoBehaviour {
 	bool secondThrow = false;
 	bool throwing = false;		//If the stone is flying
 	bool turnStart = false;		//If the player is ready to throwing
+
+	//Control related
 	bool readyToReleaseCurl = false;	//true when left button hold down
+	float releaseDeltaTime = 0;
 
 	bool gameFinished = false;
 	int gameResult = -1;
@@ -280,15 +283,20 @@ public class GameManager : MonoBehaviour {
 			}
 			if(readyToReleaseCurl)
 			{
+				releaseDeltaTime += Time.deltaTime;
 				if(Input.GetMouseButtonUp(0))
 				{
 					float forceDistance = Vector3.Distance(Input.mousePosition, mousePoint);
-					float range = forceDistance/1000.0f;
-					range = range*15 + 5.0f;
-					currentStone.GetComponent<ThrowCurling>().mForce = range;
+					float speed = forceDistance / releaseDeltaTime;
+					if(speed>1000)
+						speed = 1000; //Threshold here
+					//Debug.Log(speed);
+					float force = speed/50; //Narrow the range to 0-20.0f
+					currentStone.GetComponent<ThrowCurling>().mForce = force;
 					currentStone.GetComponent<ThrowCurling>().mRange = 0;
 					currentStone.GetComponent<ThrowCurling>().Throw();
 					readyToReleaseCurl = false;
+					releaseDeltaTime = 0;
 					throwing = true;
 				}
 				return;
@@ -305,11 +313,11 @@ public class GameManager : MonoBehaviour {
 				if(currentStone.transform.position.z>-3.5)
 					currentStone.transform.position = new Vector3(pos.x,pos.y,pos.z-Time.deltaTime*2.0f);
 			}
-			/*if (Input.GetKeyDown("space"))
+			if (Input.GetKeyDown("space"))
 			{
 				currentStone.GetComponent<ThrowCurling>().Throw();
 				throwing = true;
-			}*/
+			}
 		}
 		else // Curling is moving!
 		{
