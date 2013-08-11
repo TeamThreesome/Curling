@@ -294,15 +294,15 @@ public class GameManager : MonoBehaviour {
 					//Debug.Log(speed);
 					if(speed>1000)
 						speed = 1000; //Threshold here
-					float force = speed/50; //Narrow the range to 0-20.0f
+					float force = speed/66 + 5; //Narrow the range to 0-20.0f
 
 					//Torque here
 					float xPosMoved = mousePoint.x - Input.mousePosition.x ;
-					Debug.Log(xPosMoved);
+					//Debug.Log(xPosMoved);
 					if(xPosMoved>1000)
 						xPosMoved = 1000; //Threshold here
 					float sideforce = xPosMoved/20;
-					Debug.Log(sideforce);
+					//Debug.Log(sideforce);
 
 					currentStone.GetComponent<ThrowCurling>().sideForce = sideforce;
 					currentStone.GetComponent<ThrowCurling>().mForce = force;
@@ -334,29 +334,40 @@ public class GameManager : MonoBehaviour {
 		}
 		else // Curling is moving!
 		{
-			if(currentStone.rigidbody.velocity.magnitude>0.1) 
+			//Check other stones
+			for(int i=0;i<finishedStones.Count;i++)
+			{
+				if(finishedStones[i].transform.position.z>4.13 || finishedStones[i].transform.position.z<-4.13 || finishedStones[i].transform.position.x>43)
+				{
+					Object.Destroy(finishedStones[i]);
+					finishedStones.RemoveAt(i);
+				}
+			}
+
+			//Update the camera
+			if(currentStone!=null && currentStone.rigidbody.velocity.magnitude>0.1 && currentStone.transform.position.z<4.13 && currentStone.transform.position.z>-4.13 && currentStone.transform.position.x<43) 
 			{
 				tempCameraPos.x = currentStone.transform.position.x-8;
 				tempCameraPos.y = currentStone.transform.position.y+7;
 				//tempCameraPos.z = Camera.mainCamera.transform.position.z;
 				Camera.mainCamera.transform.position = tempCameraPos;
 			}
-			else if(Vector3.Distance(currentStone.transform.position,startPoint)>3 )
-				FinishThrow();
-
-			foreach(GameObject obj in finishedStones)
+			else// if(currentStone!=null && Vector3.Distance(currentStone.transform.position,startPoint)>3 )
 			{
-				if(obj.transform.position.z>4.13 || obj.transform.position.z<-4.13 || obj.transform.position.x>43)
+				//To check if the throwing finished
+				if(currentStone!=null && (currentStone.transform.position.z>4.13 || currentStone.transform.position.z<-4.13 || currentStone.transform.position.x>43) )
 				{
-					finishedStones.Remove(obj);
-					Object.Destroy(obj);
-					break;
+					Object.Destroy(currentStone);
+					currentStone = null;
 				}
-			}
-			if(currentStone.transform.position.z>4.13 || currentStone.transform.position.z<-4.13 || currentStone.transform.position.x>43)
-			{
-				Object.Destroy(currentStone);
-				currentStone = null;
+				for(int i=0; i<finishedStones.Count;i++)
+				{
+					if(finishedStones[i].rigidbody.velocity.magnitude>0.1)
+						return;
+				}
+				//For 0 speed at beginning problem 
+				if(currentStone!=null && Vector3.Distance(currentStone.transform.position,startPoint)<3)
+					return;
 				FinishThrow();
 			}
 		}
