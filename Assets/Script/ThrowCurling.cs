@@ -3,8 +3,9 @@ using System.Collections;
 
 public class ThrowCurling : MonoBehaviour {
 	
-	public float mForce = 250;
-	public float mRange = 50;
+	public float mForce = 10;
+	public float mRange = 0;
+	public float sideForce = 0;
 	int playerID;
 
 	// Use this for initialization
@@ -27,6 +28,8 @@ public class ThrowCurling : MonoBehaviour {
 	public void Throw () {
 		mForce = Random.Range(mForce-mRange,mForce+mRange);
 		this.rigidbody.AddForce(mForce,0,0,ForceMode.VelocityChange);
+		this.rigidbody.AddForce(0,0,sideForce,ForceMode.Acceleration);
+		this.rigidbody.AddTorque(0,-40*sideForce,0);
 	}
 
 	void OnCollisionEnter(Collision collision) {

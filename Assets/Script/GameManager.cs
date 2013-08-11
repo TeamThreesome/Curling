@@ -286,12 +286,25 @@ public class GameManager : MonoBehaviour {
 				releaseDeltaTime += Time.deltaTime;
 				if(Input.GetMouseButtonUp(0))
 				{
-					float forceDistance = Vector3.Distance(Input.mousePosition, mousePoint);
+					//float forceDistance = Vector3.Distance(Input.mousePosition, mousePoint);
+					float forceDistance = Input.mousePosition.y - mousePoint.y;
+					if (forceDistance<0)
+						forceDistance = -forceDistance;
 					float speed = forceDistance / releaseDeltaTime;
+					//Debug.Log(speed);
 					if(speed>1000)
 						speed = 1000; //Threshold here
-					//Debug.Log(speed);
 					float force = speed/50; //Narrow the range to 0-20.0f
+
+					//Torque here
+					float xPosMoved = mousePoint.x - Input.mousePosition.x ;
+					Debug.Log(xPosMoved);
+					if(xPosMoved>1000)
+						xPosMoved = 1000; //Threshold here
+					float sideforce = xPosMoved/20;
+					Debug.Log(sideforce);
+
+					currentStone.GetComponent<ThrowCurling>().sideForce = sideforce;
 					currentStone.GetComponent<ThrowCurling>().mForce = force;
 					currentStone.GetComponent<ThrowCurling>().mRange = 0;
 					currentStone.GetComponent<ThrowCurling>().Throw();
