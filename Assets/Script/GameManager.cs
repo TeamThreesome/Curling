@@ -347,10 +347,12 @@ public class GameManager : MonoBehaviour {
 			//Update the camera
 			if(currentStone!=null && currentStone.rigidbody.velocity.magnitude>0.1 && currentStone.transform.position.z<4.13 && currentStone.transform.position.z>-4.13 && currentStone.transform.position.x<43) 
 			{
-				tempCameraPos.x = currentStone.transform.position.x-8;
-				tempCameraPos.y = currentStone.transform.position.y+7;
-				//tempCameraPos.z = Camera.mainCamera.transform.position.z;
-				Camera.mainCamera.transform.position = tempCameraPos;
+				if(currentStone.transform.position.x - originalCameraPos.x > 7)
+				{
+					tempCameraPos.x = currentStone.transform.position.x - 7;
+					//tempCameraPos.z = Camera.mainCamera.transform.position.z;
+					Camera.mainCamera.transform.position = tempCameraPos;
+				}
 			}
 			else// if(currentStone!=null && Vector3.Distance(currentStone.transform.position,startPoint)>3 )
 			{
