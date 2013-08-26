@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -61,7 +60,7 @@ public class GameManager : MonoBehaviour {
 		tempCameraPos = originalCameraPos;
 		//originalCameraRot = Camera.mainCamera.transform.rotation;
 		//load resource
-		stoneObject = (GameObject)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/Prefab/Pref_Stone.prefab",typeof(GameObject));
+		stoneObject = (GameObject)Resources.Load("Pref_Stone",typeof(GameObject));
 		startPoint = stoneObject.transform.position;
 		finishedStones = new List<GameObject>();
 	}
