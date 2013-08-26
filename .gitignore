@@ -8,5 +8,3 @@ Temp/
 *.pidb
 Build/
 *.mdb
-*.dll
-Assets/NGUI
