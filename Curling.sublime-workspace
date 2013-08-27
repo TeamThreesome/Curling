@@ -4,62 +4,6 @@
 		"selected_items":
 		[
 			[
-				"act",
-				"activeInHierarchy	Boolean"
-			],
-			[
-				"ac",
-				"activeInHierarchy	Boolean"
-			],
-			[
-				"ori",
-				"originalCameraPos"
-			],
-			[
-				"Remo",
-				"RemoveAt(Int32)	Void"
-			],
-			[
-				"fini",
-				"finishedStones"
-			],
-			[
-				"cur",
-				"currentStone"
-			],
-			[
-				"forc",
-				"forceDistance"
-			],
-			[
-				"for",
-				"forceDistance"
-			],
-			[
-				"cu",
-				"currentStone"
-			],
-			[
-				"De",
-				"Debug"
-			],
-			[
-				"mou",
-				"mousePoint"
-			],
-			[
-				"In",
-				"Input"
-			],
-			[
-				"ad",
-				"AddTorque(Vector3)	Void"
-			],
-			[
-				"rel",
-				"releaseDeltaTime"
-			],
-			[
 				"Fini",
 				"FinishGame"
 			],
@@ -92,6 +36,10 @@
 				"GetMouseButtonDown(Int32)	Boolean"
 			],
 			[
+				"cur",
+				"curlingOfRound"
+			],
+			[
 				"rou",
 				"roundsOfGame"
 			],
@@ -108,12 +56,20 @@
 				"GetButtonUp(String)	Boolean"
 			],
 			[
+				"for",
+				"forceDistance"
+			],
+			[
 				"mous",
 				"mousePoint"
 			],
 			[
 				"read",
 				"readyToReleaseCurl"
+			],
+			[
+				"mou",
+				"mousePoint"
 			],
 			[
 				"sco",
@@ -126,6 +82,14 @@
 			[
 				"fni",
 				"finishedStones"
+			],
+			[
+				"fini",
+				"finishedStones"
+			],
+			[
+				"cu",
+				"curled"
 			],
 			[
 				"Bo",
@@ -207,7 +171,7 @@
 			"file": "Assets/Script/GameManager.cs",
 			"settings":
 			{
-				"buffer_size": 9995,
+				"buffer_size": 8757,
 				"line_ending": "Unix"
 			}
 		},
@@ -215,7 +179,7 @@
 			"file": "Assets/Script/ThrowCurling.cs",
 			"settings":
 			{
-				"buffer_size": 838,
+				"buffer_size": 699,
 				"line_ending": "Unix"
 			}
 		}
@@ -276,17 +240,6 @@
 	},
 	"file_history":
 	[
-		"/Projects/Curling/Assets/NGUI/Scripts/Interaction/UIButtonKeys.cs",
-		"/Projects/Curling/Assets/NGUI/Scripts/Interaction/UIButtonTween.cs",
-		"/Projects/Curling/Assets/NGUI/Scripts/Interaction/UIDragCamera.cs",
-		"/Projects/Curling/Assets/NGUI/Scripts/Interaction/UIDragObject.cs",
-		"/Projects/Curling/Assets/NGUI/Scripts/Interaction/UIDragPanelContents.cs",
-		"/Projects/Curling/Assets/NGUI/Scripts/Interaction/UIDraggablePanel.cs",
-		"/Projects/Curling/Assets/NGUI/Scripts/Interaction/UIDraggableCamera.cs",
-		"/Projects/Curling/Assets/NGUI/Scripts/Interaction/UIGrid.cs",
-		"/Projects/Curling/Assets/NGUI/Scripts/Interaction/UIPopupList.cs",
-		"/Projects/Curling/Assets/NGUI/Scripts/Interaction/UIScrollBar.cs",
-		"/Projects/Curling/Assets/NGUI/Scripts/Interaction/UITable.cs",
 		"/Projects/VoiceRecordDemo/Classes/HelloWorldScene.h",
 		"/Projects/Curling/Curling.sublime-project",
 		"/Projects/Curling/.gitignore",
@@ -331,19 +284,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"activeSelf",
-			"active",
-			"tempCameraPos",
-			"currentStone",
-			"startPoint",
-			"stonesMoving",
-			"throwing",
-			"startthrow",
-			"FinishThrow",
-			"obj",
-			"speed",
-			"releaseDeltaTime",
-			"ReleaseDeltaTime",
 			"player1Win",
 			"getplayer",
 			"setPlayer",
@@ -422,15 +362,15 @@
 					"file": "Assets/Script/GameManager.cs",
 					"settings":
 					{
-						"buffer_size": 9995,
+						"buffer_size": 8757,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1889,
-								1889
+								1928,
+								1928
 							]
 						],
 						"settings":
@@ -439,7 +379,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 737.0,
+						"translation.y": 924.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -449,15 +389,15 @@
 					"file": "Assets/Script/ThrowCurling.cs",
 					"settings":
 					{
-						"buffer_size": 838,
+						"buffer_size": 699,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								187,
-								187
+								103,
+								103
 							]
 						],
 						"settings":
@@ -516,54 +456,6 @@
 		"selected_items":
 		[
 			[
-				"game",
-				"Assets/Script/GameManager.cs"
-			],
-			[
-				"uita",
-				"Assets/NGUI/Scripts/Interaction/UITable.cs"
-			],
-			[
-				"uisc",
-				"Assets/NGUI/Scripts/Interaction/UIScrollBar.cs"
-			],
-			[
-				"uipo",
-				"Assets/NGUI/Scripts/Interaction/UIPopupList.cs"
-			],
-			[
-				"uigri",
-				"Assets/NGUI/Scripts/Interaction/UIGrid.cs"
-			],
-			[
-				"uidrac",
-				"Assets/NGUI/Scripts/Interaction/UIDraggableCamera.cs"
-			],
-			[
-				"uidrag",
-				"Assets/NGUI/Scripts/Interaction/UIDraggablePanel.cs"
-			],
-			[
-				"uidrapan",
-				"Assets/NGUI/Scripts/Interaction/UIDragPanelContents.cs"
-			],
-			[
-				"uidrago",
-				"Assets/NGUI/Scripts/Interaction/UIDragObject.cs"
-			],
-			[
-				"uidra",
-				"Assets/NGUI/Scripts/Interaction/UIDragCamera.cs"
-			],
-			[
-				"uibutw",
-				"Assets/NGUI/Scripts/Interaction/UIButtonTween.cs"
-			],
-			[
-				"uibu",
-				"Assets/NGUI/Scripts/Interaction/UIButtonKeys.cs"
-			],
-			[
 				"",
 				"Assets/Script/ThrowCurling.cs"
 			],
@@ -606,6 +498,10 @@
 			[
 				"blo",
 				"Assets/Script/Block.cs"
+			],
+			[
+				"game",
+				"Assets/Script/GameManager.cs"
 			]
 		],
 		"width": 0.0
