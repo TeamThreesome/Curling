@@ -8,9 +8,6 @@ public class GameManager : MonoBehaviour {
 	//Scores of 2 players
 	int playerScore1 = 0;
 	int playerScore2 = 0;
-	
-	public float leapMotionPower = 3;
-	public float leapMotionSidePower = 20;
 
 	public int roundsOfGame = 10;
 	public int curlsOfRound = 8;
@@ -277,8 +274,6 @@ public class GameManager : MonoBehaviour {
 					StartThrow();
 				return;
 			}
-			if(LeapMotionInput.GetHandAxis("Depth")<-0.9)
-				readyToReleaseCurl = true;
 			if(Input.GetMouseButtonDown(0))
 			{
 				mousePoint = Input.mousePosition;
@@ -309,24 +304,7 @@ public class GameManager : MonoBehaviour {
 					//Debug.Log(sideforce);
 
 					currentStone.GetComponent<ThrowCurling>().sideForce = sideforce;
-					//Debug.Log("Side Force : "+sideforce);
 					currentStone.GetComponent<ThrowCurling>().mForce = force;
-					//Debug.Log("Force : "+force);
-					currentStone.GetComponent<ThrowCurling>().mRange = 0;
-					currentStone.GetComponent<ThrowCurling>().Throw();
-					readyToReleaseCurl = false;
-					releaseDeltaTime = 0;
-					throwing = true;
-				}
-				//Detect Leap motion release
-				if(LeapMotionInput.GetHandAxis("Depth")>0.9)
-				{
-					float sideforce = LeapMotionInput.GetHandAxis("Horizontal")*leapMotionSidePower;
-					currentStone.GetComponent<ThrowCurling>().sideForce = -sideforce;//oppsite
-					//Debug.Log("Side Force : "+sideforce);
-					float force = leapMotionPower/releaseDeltaTime;
-					currentStone.GetComponent<ThrowCurling>().mForce = force;
-					//Debug.Log("Force : "+force);
 					currentStone.GetComponent<ThrowCurling>().mRange = 0;
 					currentStone.GetComponent<ThrowCurling>().Throw();
 					readyToReleaseCurl = false;
