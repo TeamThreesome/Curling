@@ -111,6 +111,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64c0c7667a12e134a84a1b2024f4bcff, type: 3}
   m_Name: 
+  leapMotionPower: 3
+  leapMotionSidePower: 20
   roundsOfGame: 4
   curlsOfRound: 4
   scoreCenter: {fileID: 1711192500}
