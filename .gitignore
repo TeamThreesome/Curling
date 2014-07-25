@@ -8,3 +8,4 @@ Temp/
 *.pidb
 Build/
 *.mdb
+*.sublime-workspace
